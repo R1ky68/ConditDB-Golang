@@ -1,0 +1,62 @@
+
+Modifiche su excel prima dell'export come csv
+
+Ii fogli da vedere sono 
+parziali
+totali
+
+1. le date vanno messe in formato yyyy-mm-dd
+	Valido Dal --> yyyy-mm-dd data
+	Valido Al   --> yyyy-mm-dd data
+	Del   --> yyyy-mm-dd data
+
+2. Fare l'upper case dei campi
+	foglio 1 : garanzia	tipoACT_OF_GOD	taxi	toyotaDealerNetwork	brandLusso	lexus	vhlComm	valAss franchigia
+	foglio 2 : TAXI	REPLACEMENTOFCAR	PROVINCIA	ETÀ VEICOLO	NUOVO/USATO	TOTALE/PARZIALE
+
+3. I nomi dei campi vanno cambiati in :
+	Nello sheet parziale
+		conditCode	validoDal	validoAl	tipoCondizioni	condizioni	del	garanzia	tipoACT_OF_GOD	taxi	toyotaDealerNetwork	brandLusso	lexus	vhlComm	valAss	financialType	franchigia	 scoperto	massimalePerSX	massimalePerAnno	decurtazione	exProt	
+
+
+	Nello sheet total
+	conditCode	validoDal	validoAl	tipoCondizioni	condizioni	del	taxi	replacementOfCar	provincia	etaVeicolo	nuovoUsato	totaleParziale	scoperto	deprezzamentoNewUsed
+
+
+3. Modifica valori sui campi :
+	Nello sheet parziale
+		tipoACT_OF_GOD 		deve essere HAIL_STORM e OTHER , stringa vuota diventa OTHER
+		taxi 								deve essere solo SI e NO, ALL diventa NO
+		toyotaDealerNetwork  deve essere solo SI e NO, ALL diventa SI
+		vhlComm						deve essere solo SI e NO, ALL diventa NO
+
+
+4. Formato money
+	franchigia. va formattato in numero senza decimali
+	decurtazione. va formattato in numero senza decimali
+
+
+5. Annulla.spazi
+
+	su sheet 1 massimalePerSX	massimalePerAnno
+	
+	
+	
+	
+	
+	
+	
+Franchigia --> testo
+Massimale per SX --> testo
+Massimale per anno --> testo
+
+
+TAXI ALL = NO
+TOYOTA DEALER NETWORK  ALL = SI
+VhlComm ALL = NO
+tipoACT_OF_GOD == "" = "OTHER"
+
+franchigia = "SEE DECURTAZIONE" se "See decurtazione"
+decurtazione = "0" se vuota
+
+
